@@ -18,8 +18,9 @@ class CreateSchedulesTable extends Migration
             $table->integer('clinic_id')->unsigned();
             $table->enum('week_days',['Saturday','Sunday','Monday','Tuesday','Wednesday','Thursday','Friday']);
             $table->time('opening_time');
-            $table->time('closing_time');
+            $table->time('closing_time');          
             $table->timestamps();
+            $table->timestamp('deleted_at')->nullable();
         });
     }
 
